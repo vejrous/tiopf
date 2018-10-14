@@ -71,11 +71,11 @@ uses
   tiConstants,
   tiExcept,
   tiLog,
-  {$IF Defined(DELPHI2009) or Defined(DELPHI2010)}
-    ComObj,
-  {$ELSE}
+  {$IFDEF DELPHIXE2ORABOVE}
     System.Win.ComObj,
-  {$IFEND}
+  {$ELSE}
+    ComObj,
+  {$ENDIF}
   ActiveX,
   Classes,
   SyncObjs,
