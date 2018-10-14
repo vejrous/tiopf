@@ -17,7 +17,11 @@ uses
   ,Buttons
   {$IFDEF MSWINDOWS}
   ,shellAPI
-  ,System.Win.Registry
+  {$IFDEF DELPHIXE2ORABOVE}
+    ,System.Win.Registry
+  {$ELSE}
+    ,Registry
+  {$ENDIF}
   ,windows  // needed for HWnd under FPC
   {$ENDIF}
   {$IFDEF UNIX}
@@ -153,7 +157,8 @@ uses
   ,LCLType
   {$ENDIF}
   {$IFNDEF FPC}
-  ,UITypes  // gets rid of Delphi H2443 compiler hint
+  //Vejda
+  //,UITypes  // gets rid of Delphi H2443 compiler hint
   {$ENDIF}
   ,tiGUIConstants
  ;
