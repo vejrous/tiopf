@@ -5,7 +5,11 @@ unit tiQueryADOAccess;
 interface
 uses
   Classes
-  ,Data.Win.ADODb
+  {$IFDEF DELPHIXE2ORABOVE}
+    ,Data.Win.ADODB
+  {$ELSE}
+    ,ADODB
+  {$ENDIF}
   ,tiQueryADOAbs
   ,tiQuery
   ,tiPersistenceLayers

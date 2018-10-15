@@ -5,7 +5,11 @@ uses
    tiQuery
   ,Classes
   ,Windows
-  ,Data.Win.ADODb
+  {$IFDEF DELPHIXE2ORABOVE}
+    ,Data.Win.ADODB
+  {$ELSE}
+    ,ADODB
+  {$ENDIF}
   ,tiQueryDataset
   ,DB
  ;
